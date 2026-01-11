@@ -6,6 +6,8 @@ A visual guide to function call principles through assembly language.
 
 [English](en/README.md) | [中文](zh/README.md)
 
+![Stack Frame Diagram](images/stack5.png)
+
 ---
 
 ## About This Guide
