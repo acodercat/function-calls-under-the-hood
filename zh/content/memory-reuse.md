@@ -1,4 +1,4 @@
-# 一个有趣的例子
+# 栈帧内存复用
 
 
 
@@ -15,7 +15,7 @@ void init_array() {
 void print_array() {
     int arr[10];
     for (int i = 0; i < 10; ++i) {
-       printf("%ld\t", arr[i]);
+       printf("%d\t", arr[i]);
     }
 }
 
@@ -47,7 +47,7 @@ int main() {
 
 来看下这两个函数各自在返回前的栈帧结构：
 
-![](https://image.coder.cat/stack29.png)
+![](../../images/stack29.png)
 
 可以发现它们的栈帧结构和大小完全一样。`init_array`执行完之后它的栈帧被销毁，但是原来的值还在内存中。当`print_array`执行时继续给它分配了同一块内存且栈帧结构也一样，这样就把`init_array`在内存中遗留的数据拿到了。
 

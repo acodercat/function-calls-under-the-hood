@@ -17,10 +17,10 @@ void main() {
 
 分配过程（一个单元格8个字节）：
 
-![](https://image.coder.cat/stack13.png)
+![](../../images/stack13.png)
 
 
 
 最后再把这两个变量分别存入栈中：
 
-![](https://image.coder.cat/stack14.png)
+![](../../images/stack14.png)

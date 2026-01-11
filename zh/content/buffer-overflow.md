@@ -24,11 +24,11 @@ int main() {
 
 代码中数组`arr`和变量`foo`它们在栈中是连续存放的：
 
-![](https://image.coder.cat/stack30.png)
+![](../../images/stack30.png)
 
-图中还发现变量`foo`放在了更低的地址上，所以在修改` arr[-1]`时也是修改变量`foo`。
+图中还发现变量`foo`放在了更低的地址上，所以在修改`arr[-1]`时也是修改变量`foo`。
 
-代码输出到控制中的结果：
+代码输出到控制台中的结果：
 
 ```bash
 foo is 20
@@ -59,7 +59,7 @@ void bar() {
 
 void foo() {
     printf("This is foo!\n");
-    long arr[2] = {1, 2, 3};
+    long arr[2] = {1, 2};
     arr[5] = bar;
 }
 
@@ -71,7 +71,7 @@ int main() {
 
 这个例子中在数组`arr[5]`的位置存放了返回地址，至于为什么是5，我们先来看下在`foo`返回前的栈帧结构（绿色是main的栈帧，蓝色是foo的栈帧）：
 
-![](https://image.coder.cat/stack31.png)
+![](../../images/stack31.png)
 
 现在我们从`arr[0]`往下数，刚好在`arr[5]`的位置放置了函数返回地址，我们把它修改成函数`bar`的地址（C/C++中函数名表示函数第一条指令的地址）然后执行，于是得到如下控制台结果：
 
@@ -83,7 +83,7 @@ This is bar!
 
 结果如我们所愿这里成功跳转到了`bar`，但也收获了一个`段错误`。为什么会发生这个`段错误`呢？我们继续看下在`bar`运行前后的栈帧变化（绿色是main的栈帧，蓝色是bar的栈帧）：
 
-![](https://image.coder.cat/stack32.png)
+![](../../images/stack32.png)
 
 
 
